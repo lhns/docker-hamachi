@@ -4,7 +4,7 @@ start_daemon(){
   /usr/local/hamachi/hamachid -c /config
   while [ 1 ]; do
     out=$(hamachi)
-    [[ $out =~ *version* ]] && sleep 1 || break
+    [[ $out =~ .*version.* ]] && break || sleep 1
   done
 }
 
