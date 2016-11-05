@@ -13,7 +13,7 @@ COPY ["bin/hamachi.sh", "/tmp/"]
 COPY ["bin/inittun.sh", "/tmp/"]
 
 RUN cd "/tmp" \
- && wget "$HAMACHI_URL" \
+ && curl -LO "$HAMACHI_URL" \
  && tar -zxf "$HAMACHI_FILE" \
  && mv "$HAMACHI_NAME" "/usr/local/hamachi/" \
  && ln -sf "/usr/local/hamachi/hamachid" "/usr/bin/hamachi" \
