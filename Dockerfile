@@ -13,9 +13,9 @@ COPY ["bin/hamachi.sh", "/tmp/"]
 COPY ["bin/inittun.sh", "/tmp/"]
 
 RUN cd "/tmp" \
- && curl -LO "$HAMACHI_URL" \
- && tar -zxf "$HAMACHI_FILE" \
- && mv "$HAMACHI_NAME" "/usr/local/hamachi/" \
+ && curl -LO $HAMACHI_URL \
+ && tar -zxf $HAMACHI_FILE \
+ && mv $HAMACHI_NAME "/usr/local/hamachi/" \
  && ln -sf "/usr/local/hamachi/hamachid" "/usr/bin/hamachi" \
  && chmod +x "hamachi.sh" \
  && mv "hamachi.sh" "/usr/local/hamachi/" \
